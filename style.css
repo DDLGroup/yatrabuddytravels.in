@@ -1,0 +1,551 @@
+/* ==========================================================================
+   YATRA BUDDY TRAVELS - SITE UNDER MAINTENANCE
+   Theme: Logo Palette
+   - Deep Royal Navy: #0a2b4e / #06172d / #040e1b
+   - Elegant Warm Gold: #c59034 / #d49b38 / #f7c462
+   - Crisp White & Light Slate: #ffffff / #e2e8f0
+   ========================================================================== */
+
+:root {
+  --color-navy-darkest: #040e1b;
+  --color-navy-dark: #06172d;
+  --color-navy-primary: #0a2b4e;
+  --color-navy-light: #113d6d;
+  --color-navy-card: rgba(10, 43, 78, 0.65);
+  
+  --color-gold-dark: #996e23;
+  --color-gold-primary: #c59034;
+  --color-gold-light: #e5aa43;
+  --color-gold-bright: #f7c462;
+  --color-gold-glow: rgba(197, 144, 52, 0.35);
+  --border-gold: rgba(197, 144, 52, 0.3);
+  --border-gold-bright: rgba(247, 196, 98, 0.6);
+
+  --text-white: #ffffff;
+  --text-light: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-gold: #f7c462;
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-digital: 'Space Grotesk', 'Outfit', monospace, sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition: all 0.25s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-navy-darkest);
+  background-image: 
+    radial-gradient(circle at 50% 15%, #0e3b6b 0%, #06172d 55%, #040e1b 100%);
+  background-attachment: fixed;
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ambient glow orbs */
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-glow-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-gold-primary);
+  top: -100px;
+  right: -80px;
+  opacity: 0.18;
+}
+
+.bg-glow-2 {
+  width: 450px;
+  height: 450px;
+  background: var(--color-navy-light);
+  bottom: -100px;
+  left: -80px;
+  opacity: 0.28;
+}
+
+/* Main Container */
+.maintenance-container {
+  width: 100%;
+  max-width: 760px;
+  position: relative;
+  z-index: 2;
+  margin: auto;
+}
+
+/* Card */
+.maintenance-card {
+  background: var(--color-navy-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.8rem;
+  position: relative;
+}
+
+.maintenance-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-bright), transparent);
+}
+
+/* Logo */
+.logo-wrapper {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-halo {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-gold-bright) 0%, rgba(197, 144, 52, 0) 70%);
+  opacity: 0.45;
+  filter: blur(12px);
+  animation: haloPulse 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes haloPulse {
+  0% { transform: scale(0.92); opacity: 0.35; }
+  100% { transform: scale(1.1); opacity: 0.6; }
+}
+
+.brand-logo {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ffffff;
+  padding: 4px;
+  border: 3px solid var(--color-gold-primary);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.4),
+    0 0 20px var(--color-gold-glow);
+  display: block;
+}
+
+/* Brand Heading */
+.brand-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--text-white);
+  text-transform: uppercase;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
+}
+
+.brand-slogan {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--color-gold-bright);
+  text-transform: uppercase;
+}
+
+.brand-slogan i {
+  font-size: 0.95rem;
+  animation: compassWiggle 5s ease-in-out infinite alternate;
+}
+
+@keyframes compassWiggle {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(40deg); }
+  100% { transform: rotate(-25deg); }
+}
+
+/* Site Under Maintenance Tag */
+.maintenance-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: var(--radius-full);
+  background: rgba(4, 14, 27, 0.85);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pulse-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-gold-bright);
+  position: relative;
+  box-shadow: 0 0 10px var(--color-gold-bright);
+}
+
+.pulse-indicator::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid var(--color-gold-bright);
+  animation: pulseRipple 1.8s infinite;
+}
+
+@keyframes pulseRipple {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.tag-text {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: var(--text-white);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   7-Day Digital Countdown
+   ========================================================================== */
+.countdown-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  background: rgba(4, 14, 27, 0.7);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.2rem;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+}
+
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  padding: 0.9rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, rgba(14, 59, 107, 0.6) 0%, rgba(6, 23, 45, 0.9) 100%);
+  border: 1px solid var(--border-gold);
+  box-shadow: 
+    0 6px 15px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: var(--transition);
+}
+
+.countdown-box:hover {
+  border-color: var(--border-gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--color-gold-glow);
+}
+
+.digital-number {
+  font-family: var(--font-digital);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-white);
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgba(247, 196, 98, 0.4);
+}
+
+.countdown-unit {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-gold-bright);
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+}
+
+.countdown-separator {
+  font-family: var(--font-digital);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-gold-primary);
+  line-height: 1;
+  opacity: 0.8;
+  animation: blinkSep 1s infinite alternate;
+}
+
+@keyframes blinkSep {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.countdown-status {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.countdown-status i {
+  color: var(--color-gold-light);
+}
+
+/* ==========================================================================
+   Contact Details Section
+   ========================================================================== */
+.contact-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.contact-heading {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--color-gold-bright);
+  text-transform: uppercase;
+  padding: 0 1rem;
+  position: relative;
+  background: transparent;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  text-align: left;
+}
+
+.contact-item {
+  background: rgba(4, 14, 27, 0.75);
+  border: 1px solid rgba(197, 144, 52, 0.22);
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  border-color: var(--border-gold-bright);
+  background: rgba(4, 14, 27, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.contact-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(10, 43, 78, 0.9);
+  border: 1px solid var(--border-gold);
+  color: var(--color-gold-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.contact-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+}
+
+.contact-value {
+  font-size: 1.05rem;
+  color: var(--text-white);
+  font-family: var(--font-heading);
+}
+
+.contact-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.link-divider {
+  color: #64748b;
+}
+
+.action-link {
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.action-link:hover {
+  color: var(--color-gold-bright);
+  text-decoration: underline;
+}
+
+.whatsapp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  margin-left: 0.3rem;
+  transition: var(--transition);
+}
+
+.whatsapp-badge:hover {
+  background: #1eb954;
+  transform: translateY(-1px);
+}
+
+.address-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 640px) {
+  .maintenance-card {
+    padding: 2rem 1.1rem;
+    gap: 1.4rem;
+  }
+
+  .countdown-box {
+    min-width: 65px;
+    padding: 0.7rem 0.35rem;
+  }
+
+  .digital-number {
+    font-size: 1.8rem;
+  }
+
+  .countdown-unit {
+    font-size: 0.65rem;
+  }
+
+  .countdown-separator {
+    font-size: 1.6rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .brand-title {
+    font-size: 1.6rem;
+  }
+
+  .brand-slogan {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .countdown-grid {
+    gap: 0.4rem;
+  }
+
+  .countdown-box {
+    min-width: 55px;
+    padding: 0.5rem 0.2rem;
+  }
+
+  .digital-number {
+    font-size: 1.5rem;
+  }
+}
