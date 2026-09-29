@@ -12,6 +12,16 @@
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://yatrabuddytravels.in/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://yatrabuddytravels.in/" />
     <image:image>
+      <image:loc>https://yatrabuddytravels.in/og-image.jpg</image:loc>
+      <image:title>Yatra Buddy Travels - Official Social Preview Banner</image:title>
+      <image:caption>Customized Domestic and International Tour Packages by Yatra Buddy Travels.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://yatrabuddytravels.in/logo-square.png</image:loc>
+      <image:title>Yatra Buddy Travels Logo Emblem</image:title>
+      <image:caption>Official square logo of Yatra Buddy Travels, Born to Explore.</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://yatrabuddytravels.in/logo.png</image:loc>
       <image:title>Yatra Buddy Travels - Born to Explore</image:title>
       <image:caption>Official logo of Yatra Buddy Travels, premier tour and travel agency in West Bengal, India.</image:caption>
